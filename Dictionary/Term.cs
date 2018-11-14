@@ -28,9 +28,14 @@ namespace Dictionary
         {
 
             var terms = new Dictionary<string, Term>();
-            var dog_related = new List<string> { "mammal", "nice", "perro" };
-            var theTerm = new Term("mamifero de cuatro patas", dog_related);
+            var related = new List<string> { "mammal", "nice", "perro" };
+            var theTerm = new Term("mamifero de cuatro patas", related);
             terms.Add("Dog", theTerm);
+
+            terms = new Dictionary<string, Term>();
+            related = new List<string> { "mammal", "malo", "gato" };
+            theTerm = new Term("mamifero de cuatro patas", related);
+            terms.Add("Cat", theTerm);
 
             return terms;
 
