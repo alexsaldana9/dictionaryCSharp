@@ -27,6 +27,19 @@ namespace Dictionary
             string definitionofDog = theTerms["Dog"].Definition;
             Console.WriteLine("The definition of dog is {0}", definitionofDog);
 
+            List<string> relatedtermsofDog = theTerms["Dog"]._relatedTerms;
+
+            //foreach (var item in relatedtermsofDog)
+            //{
+            //    Console.WriteLine("Terms related are {0}", relatedtermsofDog);
+            //}
+
+            for (var i = 0; i < relatedtermsofDog.Count; i++)
+            {
+                Console.WriteLine("Related Term:  {0}", relatedtermsofDog[i]);
+            }
+
+
 
         }
     }
