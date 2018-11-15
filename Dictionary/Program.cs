@@ -20,14 +20,14 @@ namespace Dictionary
             {
                 string definitionOfTerm = theTerms[termToSearch].Definition;
 
-                Console.WriteLine("The definition of {0} is {1}", termToSearch, definitionOfTerm);
+                Console.WriteLine("Definition of {0} : {1}", termToSearch, definitionOfTerm);
 
                 List<string> relatedWordsForTerm = theTerms[termToSearch]._relatedTerms;
 
 
                 for (var i = 0; i < relatedWordsForTerm.Count; i++)
                 {
-                    Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
+                    Console.WriteLine("Related Terms:  {0}", relatedWordsForTerm[i]);
                 }
             } else
             {
@@ -50,12 +50,11 @@ namespace Dictionary
 
                         break;
                     case "n":
-                        Console.WriteLine("Quit  program");
+                        Console.WriteLine("Quit program");
                         return;
-                        //break;
+
                     default:
                         Console.WriteLine("Invalid Selection. Please enter Y or N");
-                        continueProgram = Console.ReadLine();
                         break;
                 }
             }
