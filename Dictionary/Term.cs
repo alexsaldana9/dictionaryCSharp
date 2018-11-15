@@ -26,12 +26,12 @@ namespace Dictionary
         {
 
             var terms = new Dictionary<string, Term>();
-            var related = new List<string> { "mammal", "nice", "perro" };
+            var related = new List<string> { "mammal", "nice", "perro", "gato", "cat" };
             var theTerm = new Term("mamifero de cuatro patas", related);
             terms.Add("dog", theTerm);
 
             
-            related = new List<string> { "mammal", "gato" };
+            related = new List<string> { "mammal", "gato", "perro", "dog" };
             theTerm = new Term("mamifero de cuatro patas", related);
             terms.Add("cat", theTerm);
 
@@ -40,7 +40,7 @@ namespace Dictionary
             theTerm = new Term("lives in the water", related);
             terms.Add("fish", theTerm);
 
-
+            
             return terms;
 
         }

@@ -8,31 +8,49 @@ namespace Dictionary
 {
     class Program
     {
-
         public static void search()
         {
             Console.WriteLine("Enter word to search: ");
             string termToSearch = Console.ReadLine();
-            Console.WriteLine("Y: Continue to search - word {0}", termToSearch);
-
             var theTerms = Term.GetTerms();
 
-            string definitionOfTerm = theTerms[termToSearch].Definition;
+            bool termExists = theTerms.ContainsKey(termToSearch);
 
-            Console.WriteLine("The definition of {0} is {1}", termToSearch, definitionOfTerm);
-
-            List<string> relatedWordsForTerm = theTerms[termToSearch]._relatedTerms;
-
-
-            for (var i = 0; i < relatedWordsForTerm.Count; i++)
+            if (termExists == true)
             {
-                Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
+                string definitionOfTerm = theTerms[termToSearch].Definition;
+
+                Console.WriteLine("The definition of {0} is {1}", termToSearch, definitionOfTerm);
+
+                List<string> relatedWordsForTerm = theTerms[termToSearch]._relatedTerms;
+
+
+                for (var i = 0; i < relatedWordsForTerm.Count; i++)
+                {
+                    Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
+                }
+            } else
+            {
+                Console.WriteLine("Term {0} : Not Found ", termToSearch);
             }
+            
+            
+
+            //string definitionOfTerm = theTerms[termToSearch].Definition;
+
+            //Console.WriteLine("The definition of {0} is {1}", termToSearch, definitionOfTerm);
+
+            //List<string> relatedWordsForTerm = theTerms[termToSearch]._relatedTerms;
+
+
+            //for (var i = 0; i < relatedWordsForTerm.Count; i++)
+            //{
+            //    Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
+            //}
         }
         static void Main(string[] args)
         {
 
-            // do while () - loop to keep program running
             string openProgram = "Y";
             
             do
@@ -71,23 +89,6 @@ namespace Dictionary
                 }
             }
             while ((openProgram == "Y" ) || (openProgram == "y"));
-            
-            
-
-            //var theTerms = Term.GetTerms();
-            //string definitionofDog = theTerms["Dog"].Definition;
-            //Console.WriteLine("The definition of dog is {0}", definitionofDog);
-
-            //List<string> relatedtermsofDog = theTerms["Dog"]._relatedTerms;
-
-
-            //for (var i = 0; i < relatedtermsofDog.Count; i++)
-            //{
-            //    Console.WriteLine("Related Term:  {0}", relatedtermsofDog[i]);
-            //}
-
-
-
         }
     }
 }
