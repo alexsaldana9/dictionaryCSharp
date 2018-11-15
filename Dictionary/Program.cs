@@ -51,8 +51,8 @@ namespace Dictionary
                         break;
                     case "n":
                         Console.WriteLine("Quit  program");
-                        Environment.Exit(0);
-                        break;
+                        return;
+                        //break;
                     default:
                         Console.WriteLine("Invalid Selection. Please enter Y or N");
                         continueProgram = Console.ReadLine();
