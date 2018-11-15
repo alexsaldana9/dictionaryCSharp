@@ -22,20 +22,24 @@ namespace Dictionary
             get { return _relatedTerms; }
         }
 
-      
-
         public static Dictionary<string, Term> GetTerms()
         {
 
             var terms = new Dictionary<string, Term>();
             var related = new List<string> { "mammal", "nice", "perro" };
             var theTerm = new Term("mamifero de cuatro patas", related);
-            terms.Add("Dog", theTerm);
+            terms.Add("dog", theTerm);
 
-            terms = new Dictionary<string, Term>();
-            related = new List<string> { "mammal", "malo", "gato" };
+            
+            related = new List<string> { "mammal", "gato" };
             theTerm = new Term("mamifero de cuatro patas", related);
-            terms.Add("Cat", theTerm);
+            terms.Add("cat", theTerm);
+
+            
+            related = new List<string> { "fish", "pez" };
+            theTerm = new Term("lives in the water", related);
+            terms.Add("fish", theTerm);
+
 
             return terms;
 

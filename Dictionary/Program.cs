@@ -20,7 +20,8 @@ namespace Dictionary
                 var continueProgram = Console.ReadLine();
                 switch (continueProgram)
                 {
-                    case "Y":
+                    case "Y" :
+                    case "y":
                         Console.WriteLine("Enter word to search: ");
                         string termToSearch = Console.ReadLine();
                         Console.WriteLine("Y: Continue to search - word {0}", termToSearch);
@@ -43,10 +44,12 @@ namespace Dictionary
 
                         for (var i = 0; i < relatedWordsForTerm.Count; i++)
                         {
-                            Console.WriteLine("Related Term: {0}", relatedWordsForTerm[i]);
+                            Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
                         }
+
                         break;
                     case "N":
+                    case "n":
                         Console.WriteLine("Quit  program");
                         
                         break;
