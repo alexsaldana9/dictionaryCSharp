@@ -11,7 +11,7 @@ namespace Dictionary
         public static void search()
         {
             Console.WriteLine("Enter word to search: ");
-            string termToSearch = Console.ReadLine();
+            string termToSearch = Console.ReadLine().ToLower();
             var theTerms = Term.GetTerms();
 
             bool termExists = theTerms.ContainsKey(termToSearch);
@@ -33,38 +33,22 @@ namespace Dictionary
             {
                 Console.WriteLine("Term {0} : Not Found ", termToSearch);
             }
-            
-            
-
-            //string definitionOfTerm = theTerms[termToSearch].Definition;
-
-            //Console.WriteLine("The definition of {0} is {1}", termToSearch, definitionOfTerm);
-
-            //List<string> relatedWordsForTerm = theTerms[termToSearch]._relatedTerms;
-
-
-            //for (var i = 0; i < relatedWordsForTerm.Count; i++)
-            //{
-            //    Console.WriteLine("Related Term:  {0}", relatedWordsForTerm[i]);
-            //}
         }
         static void Main(string[] args)
         {
 
-            string openProgram = "Y";
+            string openProgram = "y";
             
             do
             {
               Console.WriteLine("Would you like to search for a term? Y or N ");
-              var continueProgram = Console.ReadLine();
+              var continueProgram = Console.ReadLine().ToLower();
                 switch (continueProgram)
                 {
-                    case "Y" :
                     case "y":
                         search();
 
                         break;
-                    case "N":
                     case "n":
                         Console.WriteLine("Quit  program");
                         Environment.Exit(0);
@@ -72,23 +56,10 @@ namespace Dictionary
                     default:
                         Console.WriteLine("Invalid Selection. Please enter Y or N");
                         continueProgram = Console.ReadLine();
-                        if ((openProgram == "Y") || (openProgram == "y"))
-                        {
-                            search();
-                        }
-                        else if ((openProgram == "N") || (openProgram == "n"))
-                        {
-                            Environment.Exit(0);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid Selection. Please enter Y or N");
-                            continueProgram = Console.ReadLine();
-                        }
                         break;
                 }
             }
-            while ((openProgram == "Y" ) || (openProgram == "y"));
+            while (openProgram == "y");
         }
     }
 }
